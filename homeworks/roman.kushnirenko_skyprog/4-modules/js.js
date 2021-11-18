@@ -41,14 +41,12 @@ const currentOclock = setInterval(() => {
 }, 1000);
 
 selectCityTime.addEventListener('change', function () {
+    clearInterval(currentOclock);
     if (this.value === 'ukraine') {
-        clearInterval(currentOclock);
         setInterval(selectLocalTimeOfCity, 1000, 'europe/kiev');
     } else if (this.value === 'tokyo') {
-        clearInterval(currentOclock);
         setInterval(selectLocalTimeOfCity, 1000, 'asia/tokyo');
     } else if (this.value === 'new-york') {
-        clearInterval(currentOclock);
         setInterval(selectLocalTimeOfCity, 1000, 'America/New_York');
     }
 });
